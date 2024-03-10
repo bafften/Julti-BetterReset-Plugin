@@ -1,0 +1,6 @@
+{
+  "name": "Better Reset Plugin",
+  "id": "julti-betterreset-plugin",
+  "version": "${version}",
+  "initializer": "xyz.bafften.julti.betterresetplugin.BetterResetPlugin"
+}
