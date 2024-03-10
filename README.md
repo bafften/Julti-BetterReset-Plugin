@@ -1,0 +1,2 @@
+# Julti-BetterReset-Plugin
+Jultiのリセット音をTheWallのように鳴らすプラグインです．BetterResetという名前ですが，リセット速度が速くなるなどの機能はありません．
