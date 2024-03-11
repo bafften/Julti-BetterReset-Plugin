@@ -4,13 +4,10 @@ import com.google.common.io.Resources;
 import org.apache.logging.log4j.Level;
 import xyz.duncanruns.julti.Julti;
 import xyz.duncanruns.julti.JultiAppLaunch;
-import xyz.duncanruns.julti.JultiOptions;
-import xyz.duncanruns.julti.gui.JultiGUI;
 import xyz.duncanruns.julti.plugin.PluginEvents;
 import xyz.duncanruns.julti.plugin.PluginInitializer;
 import xyz.duncanruns.julti.plugin.PluginManager;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicLong;
@@ -27,8 +24,13 @@ public class ReSound implements PluginInitializer {
 
     @Override
     public void initialize() {
-        JultiOptions options = JultiOptions.getJultiOptions();
+        ReSoundOptions options;
         AtomicLong timeTracker = new AtomicLong(System.currentTimeMillis());
+        try {
+            options = ReSoundOptions.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         Julti.log(Level.INFO, "ReSound Plugin Initialized");
 
@@ -53,17 +55,17 @@ public class ReSound implements PluginInitializer {
         });
 
         PluginEvents.InstanceEventType.RESET.register(instance -> {
-            ResetSoundUtil.playSound(options.singleResetSound, options.lockVolume);
+            ResetSoundUtil.playSound(options.ResetSound, options.ResetVolume);
         });
     }
 
     @Override
     public String getMenuButtonName() {
-        return "I'm a button!";
+        return "Config";
     }
 
     @Override
     public void onMenuButtonPress() {
-        JOptionPane.showMessageDialog(JultiGUI.getPluginsGUI(), "Holy moly! You pressed the example plugin button!!!", "Jojulti Multi Instance Macro Example Plugin Button.", JOptionPane.INFORMATION_MESSAGE);
+       ReSoundGUI.open(null);
     }
 }
