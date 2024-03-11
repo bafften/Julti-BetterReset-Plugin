@@ -1,7 +1,5 @@
-# Julti-BetterReset-Plugin
+# Julti-ReSound
 Jultiのリセット音をTheWallのように鳴らすプラグインです．
-
-BetterResetという名前ですが，リセット速度が速くなるなどの機能はありません．
 
 ## 使用方法
 jarファイルをダウンロードし，Jultiのプラグインフォルダに入れ，実行してください．
