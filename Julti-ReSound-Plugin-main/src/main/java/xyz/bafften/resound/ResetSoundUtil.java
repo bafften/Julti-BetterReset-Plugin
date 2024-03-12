@@ -57,7 +57,7 @@ public class ResetSoundUtil {
             gainControl.setValue(((gainControl.getMaximum() - gainControl.getMinimum()) * volume) + gainControl.getMinimum());
 
             Random rnd = new Random();
-            int rndValue = rnd.nextInt(312);
+            int rndValue = rnd.nextInt(256);
 
             Thread.sleep(rndValue);
 

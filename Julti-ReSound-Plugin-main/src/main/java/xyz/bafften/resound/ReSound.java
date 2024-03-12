@@ -4,6 +4,7 @@ import com.google.common.io.Resources;
 import org.apache.logging.log4j.Level;
 import xyz.duncanruns.julti.Julti;
 import xyz.duncanruns.julti.JultiAppLaunch;
+import xyz.duncanruns.julti.gui.JultiGUI;
 import xyz.duncanruns.julti.plugin.PluginEvents;
 import xyz.duncanruns.julti.plugin.PluginInitializer;
 import xyz.duncanruns.julti.plugin.PluginManager;
@@ -11,6 +12,8 @@ import xyz.duncanruns.julti.plugin.PluginManager;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicLong;
+
+import javax.swing.JOptionPane;
 
 public class ReSound implements PluginInitializer {
     public static void main(String[] args) throws IOException {
@@ -51,6 +54,11 @@ public class ReSound implements PluginInitializer {
 
         PluginEvents.RunnableEventType.STOP.register(() -> {
             // This gets run when Julti is shutting down
+            try{
+                ReSoundOptions.save();
+            } catch (IOException e){
+                Julti.log(Level.ERROR, "ReSound: Failed to saving options. " + e);
+            }
             Julti.log(Level.INFO, "ReSound Plugin shutting down...");
         });
 
@@ -61,11 +69,12 @@ public class ReSound implements PluginInitializer {
 
     @Override
     public String getMenuButtonName() {
-        return "Config";
+        return "Open Config";
     }
 
     @Override
     public void onMenuButtonPress() {
-       ReSoundGUI.open(null);
+       ReSoundGUI.open();
+       // JOptionPane.showMessageDialog(JultiGUI.getPluginsGUI(), "Coming soon!\nPlease edit resoundoptions.json in the .Julti folder to set it up.", "ReSound Config", JOptionPane.INFORMATION_MESSAGE); 
     }
 }
