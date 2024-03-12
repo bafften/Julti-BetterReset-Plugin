@@ -7,15 +7,8 @@ import xyz.duncanruns.julti.JultiOptions;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nullable;
 
 public  class ReSoundOptions{
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();

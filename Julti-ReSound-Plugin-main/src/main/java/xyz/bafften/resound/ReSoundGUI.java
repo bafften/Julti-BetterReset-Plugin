@@ -1,9 +1,7 @@
 package xyz.bafften.resound;
 
-import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.io.IOException;
-
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -12,12 +10,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
+import xyz.duncanruns.julti.Julti;
 import org.apache.logging.log4j.Level;
 
-import xyz.duncanruns.julti.Julti;
-import xyz.duncanruns.julti.gui.JultiGUI;
-import xyz.duncanruns.julti.gui.PluginsGUI;
 
 public class ReSoundGUI extends JFrame{
     private static ReSoundGUI instance = null;

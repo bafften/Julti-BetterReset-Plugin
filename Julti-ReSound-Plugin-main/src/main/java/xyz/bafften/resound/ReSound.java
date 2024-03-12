@@ -4,7 +4,6 @@ import com.google.common.io.Resources;
 import org.apache.logging.log4j.Level;
 import xyz.duncanruns.julti.Julti;
 import xyz.duncanruns.julti.JultiAppLaunch;
-import xyz.duncanruns.julti.gui.JultiGUI;
 import xyz.duncanruns.julti.plugin.PluginEvents;
 import xyz.duncanruns.julti.plugin.PluginInitializer;
 import xyz.duncanruns.julti.plugin.PluginManager;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.swing.JOptionPane;
 
 public class ReSound implements PluginInitializer {
     public static void main(String[] args) throws IOException {
