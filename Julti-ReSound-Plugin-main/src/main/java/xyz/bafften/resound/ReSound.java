@@ -73,6 +73,5 @@ public class ReSound implements PluginInitializer {
     @Override
     public void onMenuButtonPress() {
        ReSoundGUI.open();
-       // JOptionPane.showMessageDialog(JultiGUI.getPluginsGUI(), "Coming soon!\nPlease edit resoundoptions.json in the .Julti folder to set it up.", "ReSound Config", JOptionPane.INFORMATION_MESSAGE); 
     }
 }

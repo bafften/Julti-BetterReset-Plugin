@@ -45,14 +45,6 @@ public class ResetSoundUtil {
 
             // https://stackoverflow.com/questions/40514910/set-volume-of-java-clip
             // Thanks to the anonymous user7106805
-            if (volume == 0){
-                volume = 0;
-            }else{
-                volume += 0.07;
-                if (volume > 1.0){
-                    volume = 1;
-                }
-            }
             FloatControl gainControl = ((FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN));
             gainControl.setValue(((gainControl.getMaximum() - gainControl.getMinimum()) * volume) + gainControl.getMinimum());
 
