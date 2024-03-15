@@ -30,7 +30,7 @@ public class ReSoundGUI extends JFrame{
     public ReSoundGUI() {
         this.$$$setupUI$$$();
         this.setContentPane(this.mainPanel);
-        this.setTitle("Julti Benchmark Options");
+        this.setTitle("ReSound Config");
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
