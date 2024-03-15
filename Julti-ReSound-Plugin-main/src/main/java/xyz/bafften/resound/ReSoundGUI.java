@@ -74,7 +74,6 @@ public class ReSoundGUI extends JFrame{
                     }
                 } catch (Exception e){
                     this.showInvalidInput();
-                    Julti.log(Level.ERROR, "ReSound: Expection: " + e);
                 }
             } while (ok == false);
             try{
