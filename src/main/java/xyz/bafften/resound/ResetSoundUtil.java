@@ -11,7 +11,6 @@ import xyz.duncanruns.julti.util.*;
 public class ResetSoundUtil {
     private ResetSoundUtil() {
     }
-
     /**
      * Plays the sound found at soundPath at the specified volume.
      *
