@@ -15,7 +15,7 @@ This plugin makes the Julti reset sound like TheWall.
 ## How to use.
 1. Download the latest .jar file from Releaces and place the file in `C:\Users\[User Name]\.Julti\plugins`.
 2. disable `Single Reset Sound` and `Multi Reset Sound` or set the volume to 0% in Julti's Sound settings.
-3, go to the Plugins... Click on Open Config in the ReSound section in the `Single Reset Sound` section to set the reset sound and volume.
+3. go to the Plugins... Click on Open Config in the ReSound section in the `Single Reset Sound` section to set the reset sound and volume.
 
 ## If you have installed this but don't want to use it
 Since you cannot enable/disable the plugin function, delete the plugin file from the plugins folder in Julti.
