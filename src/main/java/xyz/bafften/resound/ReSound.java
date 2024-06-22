@@ -33,9 +33,14 @@ public class ReSound implements PluginInitializer {
             throw new RuntimeException(e);
         }
 
+        ReSoundUtil.getInstanceCount();
+
         Julti.log(Level.INFO, "ReSound Plugin Initialized");
 
         PluginEvents.RunnableEventType.RELOAD.register(() -> {
+
+            ReSoundUtil.getInstanceCount();
+            
             // This gets run when Julti launches and every time the profile is switched
             Julti.log(Level.INFO, "ReSound Plugin Reloaded!");
         });
@@ -61,7 +66,7 @@ public class ReSound implements PluginInitializer {
         });
 
         PluginEvents.InstanceEventType.RESET.register(instance -> {
-            ResetSoundUtil.playSound(options.ResetSound, options.ResetVolume);
+            SoundPlayer.playSound(options.ResetSound, options.ResetVolume, ReSoundUtil.instances);
         });
     }
 

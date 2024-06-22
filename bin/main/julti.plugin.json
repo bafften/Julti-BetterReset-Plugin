@@ -1,0 +1,6 @@
+{
+  "name": "ReSound",
+  "id": "julti-resound",
+  "version": "${version}",
+  "initializer": "xyz.bafften.resound.ReSound"
+}

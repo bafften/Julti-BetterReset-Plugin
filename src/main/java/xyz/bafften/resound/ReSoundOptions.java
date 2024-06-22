@@ -16,12 +16,32 @@ public  class ReSoundOptions{
     public static ReSoundOptions instance;
     private static final Path SAVE_PATH = JultiOptions.getJultiDir().resolve("resoundoptions.json");
 
+    // 設定項目
+    public boolean enabled = true;
     public String ResetSound = JultiOptions.getJultiDir().resolve("sounds").resolve("click.wav").toAbsolutePath().toString();
     public float ResetVolume = 0.7f;
+
+    // Julti側の設定の保存
+    public float singleResetVolume;
+    public float multiResetVolume;
 
     public static void save() throws IOException{
         FileWriter writer = new FileWriter(SAVE_PATH.toFile());
         GSON.toJson(instance, writer);
+        writer.close();
+    }
+
+    public static void save(ReSoundOptions options, boolean hasChangedCheckBox) throws IOException{
+        FileWriter writer = new FileWriter(SAVE_PATH.toFile());
+
+        if (hasChangedCheckBox){
+            if (options.enabled){
+                ReSoundUtil.jultiVolumeOff();
+            } else {
+                ReSoundUtil.jultiVolumeOn(instance);
+            }
+        }
+        GSON.toJson(options, writer);
         writer.close();
     }
 
